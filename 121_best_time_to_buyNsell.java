@@ -1,4 +1,4 @@
-// Leet code problem 121 Best time to buy and sell stocks
+// 26 Leet code problem 121 Best time to buy and sell stocks
 class Solution {
     public int maxProfit(int[] prices) {
         int buyPrice = Integer.MAX_VALUE;
