@@ -1,4 +1,4 @@
-//Remove Duplicates From sorted array
+//26 Leetcode Remove Duplicates From Sorted array
 
 class Solution {
     public int removeDuplicates(int[] nums) {
