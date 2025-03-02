@@ -28,4 +28,17 @@
 //    return originalNum === reverseNum;
 //     }
 
-const isPalindrome = (num) => num.toString() === num.toString().split("").reverse().join("");
+// const isPalindrome = (num) => num.toString() === num.toString().split("").reverse().join("");
+
+const isPalindrome = (num) => {
+    if (num < 0) return false; // Negative numbers are not palindromes
+
+    let reversed = 0, original = num;
+    
+    while (num > 0) {
+        reversed = reversed * 10 + (num % 10);
+        num = Math.floor(num / 10);
+    }
+
+    return original === reversed;
+};
