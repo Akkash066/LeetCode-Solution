@@ -7,3 +7,11 @@
 
 //If, before the delay of t milliseconds, the function cancelFn is invoked, it should cancel the delayed execution of fn. Otherwise, 
   //if cancelFn is not invoked within the specified delay t, fn should be executed with the provided args as arguments.
+
+var cancellable = function(fn, args, t) {
+     let timeoutId = setTimeout(() => fn(...args), t);
+    
+    return function cancelFn() {
+        clearTimeout(timeoutId);
+    };
+};
