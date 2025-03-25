@@ -4,3 +4,19 @@
 
 // setTimeout(cancelFn, cancelTimeMs)
 // The function fn should be called with args immediately and then called again every t milliseconds until cancelFn is called at cancelTimeMs ms.
+
+
+
+let isCancelled = false;
+
+    function execute() {
+        if (isCancelled) return;
+        fn(...args);
+        setTimeout(execute, t);
+    }
+
+    execute(); // Call immediately
+
+    return function cancelFn() {
+        isCancelled = true;
+    };
